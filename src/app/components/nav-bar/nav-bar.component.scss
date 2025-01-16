@@ -1,0 +1,16 @@
+/* src/app/components/nav-bar/nav-bar.component.scss */
+@use "../../../styles.scss" as *; /* Import global styles and use variables */
+
+.nav-menu-list {
+  display: flex;
+  justify-content: flex-end;
+  background-color: $secondary-color;
+  border: 0;
+  height: 10vh;
+
+  .nav-menu-item {
+    margin: 10px;
+    font-size: 18px;
+    background-color: $secondary-color;
+  }
+}

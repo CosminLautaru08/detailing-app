@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-nav-bar',
-  imports: [],
+  imports: [IonicModule],
   templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.sass'
+  styleUrl: './nav-bar.component.scss',
 })
-export class NavBarComponent {
-
-}
+export class NavBarComponent {}
