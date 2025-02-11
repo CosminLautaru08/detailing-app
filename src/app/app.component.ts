@@ -1,11 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { PictureCarrouselComponent } from './components/picture-carrousel/picture-carrousel.component';
+import { register } from 'swiper/element/bundle';
 
+register();
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, IonicModule, NavBarComponent],
+  imports: [
+    RouterOutlet,
+    IonicModule,
+    NavBarComponent,
+    PictureCarrouselComponent,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
