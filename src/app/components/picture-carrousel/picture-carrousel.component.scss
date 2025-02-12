@@ -1,143 +1,55 @@
 @use "../../../styles.scss" as *; /* Import global styles and use variables */
 
+:root {
+  --slide-width: clamp(150px, 22vw, 250px); /* Responsive width */
+  --slide-height: clamp(180px, 60vh, 400px); /* Responsive height */
+}
+
 .carrousel-container {
   display: flex;
+  flex-wrap: nowrap; /* No wrapping by default */
+  overflow-x: auto; /* Allow horizontal scrolling on small screens */
   background-color: $main-color;
   height: 80vh;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap; /* Stack slides vertically */
+    height: auto;
+    justify-content: center;
+  }
 }
 
-.first-slide {
-  background-image: url("../../assets/first-slide.jpg");
-  height: 100%;
-  width: 200px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.second-slide {
-  background-image: url("../../assets/second-slide.jpg");
-  height: 100%;
-  width: 200px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.third-slide {
-  background-image: url("../../assets/third-slide.jpg");
-  height: 100%;
-  width: 200px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.fourth-slide {
-  background-image: url("../../assets/fourth-slide.jpg");
-  height: 100%;
-  width: 200px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.fifth-slide {
-  background-image: url("../../assets/fifth-slide.jpg");
-  height: 100%;
-  width: 200px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.sixth-slide {
-  background-image: url("../../assets/sixth-slide.jpg");
-  height: 100%;
-  width: 200px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.seventh-slide {
-  background-image: url("../../assets/seventh-slide.jpg");
-  height: 100%;
-  width: 200px;
+$slides: (
+  "first": "../../assets/first-slide.jpg",
+  "second": "../../assets/second-slide.jpg",
+  "third": "../../assets/third-slide.jpg",
+  "fourth": "../../assets/fourth-slide.jpg",
+  "fifth": "../../assets/fifth-slide.jpg",
+  "sixth": "../../assets/sixth-slide.jpg",
+  "seventh": "../../assets/seventh-slide.jpg",
+);
+
+/* Mixin for responsive slides */
+@mixin slide($image) {
+  background-image: url($image);
+  width: var(--slide-width);
+  height: var(--slide-height);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* Swiper styles down => */
-
-// html,
-// body {
-//   position: relative;
-//   height: 100%;
-// }
-
-// body {
-//   background: #eee;
-//   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-//   font-size: 14px;
-//   color: #000;
-//   margin: 0;
-//   padding: 0;
-// }
-
-// swiper-container {
-//   width: 100%;
-//   height: 100%;
-// }
-
-// swiper-slide {
-//   text-align: center;
-//   font-size: 18px;
-//   background: #fff;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// swiper-slide img {
-//   display: block;
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-// }
-
-// .autoplay-progress {
-//   position: absolute;
-//   right: 16px;
-//   bottom: 16px;
-//   z-index: 10;
-//   width: 48px;
-//   height: 48px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   font-weight: bold;
-//   color: var(--swiper-theme-color);
-// }
-
-// .autoplay-progress svg {
-//   --progress: 0;
-//   position: absolute;
-//   left: 0;
-//   top: 0px;
-//   z-index: 10;
-//   width: 100%;
-//   height: 100%;
-//   stroke-width: 4px;
-//   stroke: var(--swiper-theme-color);
-//   fill: none;
-//   stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
-//   stroke-dasharray: 125.6;
-//   transform: rotate(-90deg);
-// }
+/* Apply styles to each slide */
+@each $name, $image in $slides {
+  .#{$name}-slide {
+    @include slide($image);
+  }
+}
 
 html,
 body {
   position: relative;
   height: 100%;
-}
-
-body {
   background: #eee;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -146,6 +58,7 @@ body {
   padding: 0;
 }
 
+/* Swiper Styles */
 swiper-container {
   width: 100%;
   padding-top: 100px;
@@ -155,12 +68,25 @@ swiper-container {
 swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 100vh;
-  height: 60vh;
+  width: 100vw; /* Full width */
+  height: 60vh; /* Default height */
+
+  @media (min-width: 768px) {
+    width: 100vh; /* Prevent it from exceeding 80vh */
+  }
+
+  @media (max-width: 768px) {
+    height: 50vh; /* Reduce height on tablets */
+  }
+
+  @media (max-width: 480px) {
+    height: 40vh; /* Even smaller on mobile */
+  }
 }
 
 swiper-slide img {
   display: block;
-
   width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images don't stretch */
 }

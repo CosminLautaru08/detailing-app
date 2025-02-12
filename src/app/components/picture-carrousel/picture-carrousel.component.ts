@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
-import { IonicSlides } from '@ionic/angular';
+import { IonicSlides } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-picture-carrousel',

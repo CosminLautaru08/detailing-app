@@ -16,3 +16,44 @@
     </ion-tab-button>
   </ion-tab-bar>
 </div>
+
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Meniu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <div class="ion-menu-nav-bar">
+      <ion-tab-button class="nav-menu-item">
+        <ion-label>Servicii</ion-label>
+      </ion-tab-button>
+      <ion-tab-button class="nav-menu-item">
+        <ion-label>Locatie</ion-label>
+      </ion-tab-button>
+      <ion-tab-button class="nav-menu-item">
+        <ion-label>Despre</ion-label>
+      </ion-tab-button>
+      <ion-tab-button class="nav-menu-item">
+        <ion-label>Contact</ion-label>
+      </ion-tab-button>
+    </div>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+      <ion-buttons slot="end">
+        <ion-avatar class="logo"></ion-avatar>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <!-- <ion-content class="ion-padding">
+    Tap the button in the toolbar to open the menu.
+  </ion-content> -->
+</div>
