@@ -2,3 +2,10 @@
 $main-color: #202020;
 $secondary-color: #510601;
 $text-color: white;
+/* styles.scss (global styles) */
+html,
+body {
+  overflow: auto;
+  height: 100%; /* Ensures the body can grow beyond the viewport height */
+  margin: 0; /* Remove default margin */
+}

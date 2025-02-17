@@ -1,0 +1,24 @@
+@use "../../../styles.scss" as *;
+
+.services-cards-wrapper {
+  max-width: 100vw;
+  min-height: auto; /* Adjust as necessary */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  // flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow-y: auto; /* Enables scroll on overflow */
+  padding: 2rem;
+}
+
+.services-card {
+  background-color: $secondary-color;
+  flex: 1 1 calc(33.33% - 20px);
+  text-align: center;
+
+  @media (max-width: 768px) {
+    flex: 1 1 50%;
+  }
+}
