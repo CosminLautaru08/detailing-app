@@ -6,6 +6,7 @@ import { ContactComponent } from './components/pages/contact/contact.component';
 import { LocationComponent } from './components/pages/location/location.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'location', component: LocationComponent },
