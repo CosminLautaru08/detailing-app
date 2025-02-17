@@ -2,3 +2,8 @@
 $main-color: #202020;
 $secondary-color: #510601;
 $text-color: white;
+
+@import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";

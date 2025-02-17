@@ -7,4 +7,6 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss',
 })
-export class NavBarComponent {}
+export class NavBarComponent {
+  alertButtons = ['Action'];
+}
