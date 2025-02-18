@@ -8,12 +8,7 @@ import { IonicModule } from '@ionic/angular';
 register();
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    IonicModule,
-    NavBarComponent,
-    PictureCarrouselComponent,
-  ],
+  imports: [RouterOutlet, IonicModule, NavBarComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
