@@ -1,0 +1,46 @@
+.service-sections-wrapper {
+  margin: 0 auto;
+}
+
+img {
+  height: 450px;
+  width: 50%; /* Adjust the percentage as needed */
+  object-fit: cover;
+  object-position: top;
+}
+
+ion-card {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+ion-card-content {
+  width: 50%;
+}
+
+swiper-container {
+  width: 50%;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+ion-card-content {
+  --background: transparent !important;
+  --ion-card-background: transparent !important;
+  --ion-item-background: transparent !important;
+  --ion-background-color: transparent !important;
+}

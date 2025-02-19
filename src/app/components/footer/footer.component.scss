@@ -1,0 +1,54 @@
+@use "../../../styles.scss" as *;
+ion-footer {
+  border-top: 2px;
+  background-color: $secondary-color; // Dark background
+  color: $text-color;
+  text-align: center;
+  padding: 5px 0 20px 0;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: $text-color; // Accent color for headings
+}
+
+p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+a {
+  color: $text-color;
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $text-color; // Highlight on hover
+  }
+}
+
+.social-icon {
+  color: $text-color;
+  margin: 5px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: $text-color; // Social icons change color on hover
+  }
+}
+
+.legal-links {
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.contact-section {
+  color: $text-color;
+}
+
+ion-icon {
+  color: $text-color !important; /* Ensures all icons are in text color */
+}
