@@ -43,6 +43,7 @@
     display: none;
   }
   @media (max-width: 768px) {
+    height: 56px;
     ion-menu {
       --max-width: 200px; /* Adjust as needed */
       max-width: 200px; /* Set max-width for menu */

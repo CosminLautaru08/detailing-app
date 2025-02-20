@@ -52,16 +52,9 @@
         height: 650px;
       }
     }
-    .services-card-content {
-      background-color: $main-color;
-      width: 90%;
-      height: 100%;
-      color: white;
-      font-size: larger;
-      border-radius: 10px;
-    }
-    .services-cards-list {
-      text-align: left;
-    }
+  }
+  ion-button {
+    --background: #202020;
+    --color: white;
   }
 }
