@@ -3,10 +3,12 @@ import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   OnInit,
+  ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IonicModule, IonicSlides } from '@ionic/angular';
+import { IonContent } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-service-section',
@@ -19,6 +21,8 @@ import { IonicModule, IonicSlides } from '@ionic/angular';
 export class ServiceSectionComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
   swiperModules = [IonicSlides];
+  @ViewChild(IonContent, { static: false }) content!: IonContent;
+  serviceId: string | null = null;
   services = [
     {
       id: 1,
@@ -214,5 +218,18 @@ export class ServiceSectionComponent implements OnInit {
     },
   ];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.serviceId = this.route.snapshot.paramMap.get('id');
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      if (this.serviceId) {
+        const element = document.getElementById(`service-${this.serviceId}`);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }, 100); // Small delay to ensure the view is fully rendered
+  }
 }

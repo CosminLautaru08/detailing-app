@@ -13,6 +13,8 @@
         <strong>{{ service.title }}</strong>
       </ion-card-title>
     </ion-card-header>
-    <ion-button> Mai multe detalii </ion-button>
+    <ion-button (click)="goToServiceDetails(service.id)">
+      Mai multe detalii
+    </ion-button>
   </ion-card>
 </div>

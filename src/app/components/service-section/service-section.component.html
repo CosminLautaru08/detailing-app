@@ -3,7 +3,7 @@
   *ngFor="let service of services; let i = index"
   [ngClass]="{ 'reverse-layout': i % 2 !== 0 }"
 >
-  <ion-card color="$main-color">
+  <ion-card color="$main-color" [id]="'service-' + service.id">
     <h1>{{ service.title }}</h1>
     <div class="content-wrapper">
       <!-- Image Section -->

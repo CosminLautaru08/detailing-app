@@ -48,4 +48,8 @@ export class HomeServicesComponent implements OnInit {
   constructor(private router: Router) {} // Add Router to constructor for navigation
 
   ngOnInit() {}
+
+  goToServiceDetails(serviceId: number) {
+    this.router.navigate([`/services`, serviceId]);
+  }
 }
