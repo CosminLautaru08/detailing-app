@@ -1,0 +1,21 @@
+@import "leaflet/dist/leaflet.css";
+
+#map {
+  width: 50%;
+  height: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.map-wrapper {
+  padding: 20px;
+}
+
+.leaflet-routing-alternatives-container {
+  display: none;
+}
+.leaflet-marker-icon {
+  display: none;
+}
+.leaflet-marker-shadow {
+  display: none;
+}

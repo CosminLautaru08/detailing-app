@@ -230,6 +230,6 @@ export class ServiceSectionComponent implements OnInit {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }
-    }, 100); // Small delay to ensure the view is fully rendered
+    }, 0); // Small delay to ensure the view is fully rendered
   }
 }
