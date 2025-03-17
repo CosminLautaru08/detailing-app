@@ -1,6 +1,7 @@
 @use "../../../styles.scss" as *;
-@import "leaflet/dist/leaflet.css";
+@import "leaflet/dist/leaflet.css" screen;
 
+// TODO @Cosmin: fix encapsulation issue with scrolling, improve styles for description sections
 .location-container {
   display: flex;
   gap: 20px;
