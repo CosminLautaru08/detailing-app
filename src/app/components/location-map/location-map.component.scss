@@ -1,21 +1,83 @@
+@use "../../../styles.scss" as *;
 @import "leaflet/dist/leaflet.css";
 
-#map {
-  width: 50%;
-  height: 500px;
-  margin: 0 auto;
+.location-container {
+  display: flex;
+  gap: 20px;
   padding: 20px;
-}
-.map-wrapper {
-  padding: 20px;
+  flex-direction: column; // Default: Single column layout
+
+  @media (min-width: 1024px) {
+    flex-direction: row; // Two-column layout for large screens
+    align-items: stretch; // Ensures both columns have the same height
+  }
 }
 
-.leaflet-routing-alternatives-container {
-  display: none;
+// Left: Description
+.location-details {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: $main-color;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1; // Matches height with map
+
+  @media (min-width: 1024px) {
+    width: 50%;
+    min-height: 500px; // Ensures it matches the map height
+  }
 }
-.leaflet-marker-icon {
-  display: none;
+
+// Right: Map
+.map-wrapper {
+  width: 100%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; // Ensures equal height with .location-details
+
+  @media (min-width: 1024px) {
+    width: 50%;
+    min-height: 500px; // Matches .location-details
+  }
 }
+
+#map {
+  width: 100%;
+  height: 400px; // Ensures visibility on smaller screens
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  @media (min-width: 1024px) {
+    height: 100%; // Full height of the .map-wrapper on larger screens
+  }
+}
+
+.copy-address-button {
+  --background: #{$secondary-color}; // Ensure proper text color contrast
+  color: $text-color;
+}
+
+.custom-toast {
+  --background: #43a047; // Darker green for better contrast
+  --color: white; // Ensure readability
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: auto;
+  min-width: 200px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+// Hide unnecessary Leaflet elements
+.leaflet-routing-alternatives-container,
+.leaflet-marker-icon,
 .leaflet-marker-shadow {
   display: none;
 }

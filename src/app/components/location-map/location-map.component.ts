@@ -5,7 +5,7 @@ import {
   AfterViewInit,
   ViewEncapsulation,
 } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, ToastController } from '@ionic/angular';
 import * as L from 'leaflet';
 import 'leaflet-routing-machine';
 
@@ -17,10 +17,22 @@ import 'leaflet-routing-machine';
   encapsulation: ViewEncapsulation.None,
 })
 export class LocationMapComponent implements AfterViewInit {
+  services = [
+    {
+      id: 1,
+      title: 'Spălare Premium',
+      images: ['assets/wash1.jpg', 'assets/wash2.jpg'],
+      description: 'O spălare profesională a exteriorului și interiorului.',
+      features: [{ icon: 'water-outline', text: 'Presiune ridicată' }],
+      duration: '45 min',
+      pricing: [{ icon: 'cash-outline', type: 'Standard', price: '50 RON' }],
+    },
+    // Add more services as needed
+  ];
   @ViewChild('map', { static: false }) mapContainer!: ElementRef;
   private map!: L.Map;
 
-  constructor() {}
+  constructor(private toastController: ToastController) {}
 
   ngAfterViewInit(): void {
     setTimeout(() => this.initializeMap(), 0); // Ensure DOM is ready
@@ -96,5 +108,18 @@ export class LocationMapComponent implements AfterViewInit {
         .setContent(`Locația atelierului de detailing din Biled.`) // Description for the end location in Romanian
         .openOn(this.map);
     });
+  }
+
+  async copyAddress() {
+    await navigator.clipboard.writeText('Strada Exemplu, Nr. 10, Timișoara');
+
+    const toast = await this.toastController.create({
+      message: 'Adresă copiată!',
+      duration: 3000, // 3 seconds (you can set it to 5000 or more)
+      position: 'top', // Can be 'top', 'middle', or 'bottom'
+      cssClass: 'custom-toast', // Optional: Custom styling
+    });
+
+    await toast.present();
   }
 }

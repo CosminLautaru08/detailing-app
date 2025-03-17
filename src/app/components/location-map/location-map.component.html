@@ -1,3 +1,48 @@
-<div class="map-wrapper">
-  <div #map id="map"></div>
+<div class="location-container">
+  <!-- Left Section: Description -->
+  <div class="location-details">
+    <h2>Ne găsești aici!</h2>
+    <p>
+      Vino la locația noastră pentru servicii profesionale de detailing auto.
+    </p>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>📍 Adresa</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <strong>Strada Exemplu, Nr. 10, Timișoara</strong>
+        <br />
+        <ion-button class="copy-address-button" (click)="copyAddress()">
+          Copiază Adresa
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>☎️ Contact</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-icon name="call-outline" slot="start"></ion-icon>
+          <ion-label>+40 726 065 888</ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>⏰ Program</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Luni - Vineri:</strong> 9:00 - 18:00</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Right Section: Map -->
+  <div class="map-wrapper">
+    <div #map id="map"></div>
+  </div>
 </div>
