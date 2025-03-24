@@ -1,5 +1,5 @@
 @use "../../../styles.scss" as *;
-@import "leaflet/dist/leaflet.css" screen;
+@import url("leaflet/dist/leaflet.css");
 
 // TODO @Cosmin: fix encapsulation issue with scrolling, improve styles for description sections
 .location-container {
