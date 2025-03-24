@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { IonicModule, ToastController } from '@ionic/angular';
-import * as L from 'leaflet';
+import L from 'leaflet';
 import 'leaflet-routing-machine';
 
 @Component({
