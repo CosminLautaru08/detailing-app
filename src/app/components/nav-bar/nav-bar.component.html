@@ -60,17 +60,16 @@
   </ion-tab-bar>
 </div>
 
-<div class="mobile-nav-bar">
-  <ion-menu contentId="main-content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Meniu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-    <ion-content class="ion-padding">
-      <div class="ion-menu-nav-bar">
-        <ion-tab-button class="nav-menu-item">
+<ion-menu contentId="main-content" class="mobile-only">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Meniu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div class="ion-menu-nav-bar">
+      <ion-tab-button class="nav-menu-item">
+        <ion-menu-toggle>
           <ion-label
             ><a
               routerLink="/home"
@@ -80,8 +79,10 @@
               >Bun venit</a
             ></ion-label
           >
-        </ion-tab-button>
-        <ion-tab-button class="nav-menu-item">
+        </ion-menu-toggle>
+      </ion-tab-button>
+      <ion-tab-button class="nav-menu-item">
+        <ion-menu-toggle>
           <ion-label
             ><a
               routerLink="/services"
@@ -91,8 +92,10 @@
               >Servicii</a
             ></ion-label
           >
-        </ion-tab-button>
-        <ion-tab-button class="nav-menu-item">
+        </ion-menu-toggle>
+      </ion-tab-button>
+      <ion-tab-button class="nav-menu-item">
+        <ion-menu-toggle>
           <ion-label
             ><a
               routerLink="/location"
@@ -102,8 +105,10 @@
               >Locatie</a
             ></ion-label
           >
-        </ion-tab-button>
-        <ion-tab-button class="nav-menu-item">
+        </ion-menu-toggle>
+      </ion-tab-button>
+      <ion-tab-button class="nav-menu-item">
+        <ion-menu-toggle>
           <ion-label
             ><a
               routerLink="/about"
@@ -113,8 +118,10 @@
               >Despre</a
             ></ion-label
           >
-        </ion-tab-button>
-        <ion-tab-button class="nav-menu-item">
+        </ion-menu-toggle>
+      </ion-tab-button>
+      <ion-tab-button class="nav-menu-item">
+        <ion-menu-toggle>
           <ion-label
             ><a
               routerLink="/contact"
@@ -124,22 +131,21 @@
               >Contact</a
             ></ion-label
           >
-        </ion-tab-button>
-      </div>
-    </ion-content>
-  </ion-menu>
-  <div class="ion-page" id="main-content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-        <ion-title>LC - Professional Detailing</ion-title>
-        <ion-buttons slot="end">
-          <ion-avatar class="logo"></ion-avatar>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="ion-padding"></ion-content>
-  </div>
+        </ion-menu-toggle>
+      </ion-tab-button>
+    </div>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content" class="mobile-only">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>LC - Professional Detailing</ion-title>
+      <ion-buttons slot="end">
+        <ion-avatar class="logo"></ion-avatar>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 </div>
