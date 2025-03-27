@@ -12,6 +12,5 @@ export const routes: Routes = [
   { path: 'services', component: ServicesComponent },
   { path: 'location', component: LocationComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
   { path: 'services/:id', component: ServiceSectionComponent },
 ];

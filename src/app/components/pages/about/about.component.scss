@@ -1,0 +1,54 @@
+@use "../../../../styles.scss" as *;
+
+.about-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-direction: column; // Default: Single column layout
+
+  @media (min-width: 1024px) {
+    flex-direction: row; // Two-column layout for large screens
+    align-items: stretch; // Ensures both columns have the same height
+  }
+}
+
+.about-description-container {
+  width: 100%;
+  padding: 30px;
+  background-color: $main-color;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+
+  .about-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: $text-color;
+  }
+
+  @media (min-width: 1024px) {
+    width: 50%; // Makes the description take half of the width on larger screens
+    height: 500px;
+  }
+}
+
+.about-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+
+  @media (min-width: 1024px) {
+    width: 50%; // Makes the image take half of the width on larger screens
+    height: 500px;
+  }
+}
+
+.about-image {
+  width: 100%;
+  max-height: 500px; // Ensure the image fits well
+  object-fit: cover; // Ensure the image covers the container without distortion
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
